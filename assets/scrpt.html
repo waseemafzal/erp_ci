@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript">
+     function saveSeats(row,col,s,price,levelName){
+		 var row;
+		 var col;
+		  var s;
+		  var price;
+		  var levelName;
+		  
+		// alert(total);
+		
+		// return false;
+		 var elementId = 'seat_'+row+'_'+col; 
+		 //var stringFormat=row+','+col+','+s+','+price+','+levelName;
+		 
+		 var getCheckBox = document.getElementById(elementId);
+		 
+		 var stringTextFeildVal = document.getElementById('seat_string').value;
+		 
+		
+		 
+		 if(getCheckBox != null){
+				if(getCheckBox.checked==true){
+					if(stringTextFeildVal !=null){
+						 var newString =stringTextFeildVal+'||'+stringFormat;
+						}
+				}else{
+				    
+					
+					var savedSeats = stringTextFeildVal.split('||');
+					var rSeatIndex = savedSeats.indexOf(stringFormat); 
+					savedSeats.splice(rSeatIndex,1);
+					var newString = savedSeats.join('||');
+				}
+		 
+		   }
+			
+			 document.getElementById('seat_string').value=newString;
+		     return false;
+		
+		}
+
+
+</script>
+<body>
+</body>
+</html>
